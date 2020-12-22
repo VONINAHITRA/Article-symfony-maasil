@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class="fixed-top">
+<div class="container-fluid">
+  <div class="row" style="">
+  <div class="col-md-3" >
+  <div class="row"> 
+          <div class="col-md-12" > 
+             <img src="{{asset('img/images5.jpg')}}" width="80%" style="margin-left:10%">
+           </div>
+           <div class="col-md-12" >
+           </div>
+          </div>
+       </div>
+  <div class="col-md-9" style="">
+    <div class="row">
+       <div class="col-md-7 " style="text-align:center">
+        <h1 class="pt-4 ml3" style="color:#8c3b69"> <b>LES ARTICLES</b> </h1>
+        <h5 style="color:#4682b4">BIENVENU SUR NOTRE PAGE</h5>
+        </div>
+        <div class="col-md-5" style="color:#4682b4">
+          <div class="row"  style="margin-left:20%" > 
+          <div class="col-md-12 "> 
+             <h5>Print Nationale Ankadindramamy </h5>
+             <h5>ANTANANARIVO 101 </h5>
+           </div>
+           <div class="col-md-12" >
+              Contact: +261343120839 <br>
+              Email: voninahitracalvyn@gmail.com
+           </div>
+          </div>
+       </div>
+     </div>
+  </div>
+  </div>
+</div>
+</div>
+<div class="navbar navbar-default navbar-fixed" role="navigation" style="background-color:#ff8c00">
+  <div class="container">
+    <div class="navbar-header">
+    <button type="button" class="navbar-toggle" datatoggle="collapse" data-target=".navbar-collapse">
+     <span class="icon-bar"></span>
+     <span class="icon-bar"></span>
+     <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="{{path('app_home')}}" style="color:#fff">Blog Symfony</a>
+</div>
+<div class="collapse navbar-collapse " style="margin-left:18%">
+    <ul class="nav navbar-nav" style="width:70%">
+     <li class="" ><a href="{{path('app_home')}}" style="color:#fff"><span>Acceuil</span></a></li>
+     <li  style="margin-left:5%"><a href="{{path('article.index')}}"  style="color:#fff"><span>Articles</span></a></li>
+    </ul>
+ </div><!--/.nav-collapse -->
+</div>
+</div>
+<br>
+<h3 style="color:#4682b4; margin-left:3%" ><u>LA LISTE DES ARTICLES</u></h3>
+  {% for article in articles %}
+      <div class="col-md-12 md-auto" style="margin-top:2%; hover:opacity:0.3;">
+             <div class="blog-grid"  style="margin-top:1%;">
+              <div class="blog-info" >
+              <div class="card blog-grid">
+                <div class="text-center"><h2 style="color:#4682b4">{{article.titreArticle}}</h2></div><hr>
+                 <h5 class="card-title">Auteur:  {{article.auteurArticle}}</h5>
+                </div>
+               <div class="card-body text-center">
+            <p class="card-text ">{{article.texteArticle}}</p>
+            </div><hr>
+          <span>Date de modification: {{article.createdAt|date('m/d/Y')}}</span><br>
+        <span>Date de modification: {{article.updatedAt|date('m/d/Y')}}</span>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
+{% endfor %}
+{% endblock %}

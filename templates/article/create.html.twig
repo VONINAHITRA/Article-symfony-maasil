@@ -1,0 +1,112 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class="fixed-top">
+<div class="container-fluid">
+  <div class="row" style="">
+  <div class="col-md-3" >
+  <div class="row"> 
+          <div class="col-md-12" > 
+             <img src="{{asset('img/images5.jpg')}}" width="80%" style="margin-left:10%">
+           </div>
+           <div class="col-md-12" >
+           </div>
+          </div>
+       </div>
+  <div class="col-md-9" style="">
+    <div class="row">
+       <div class="col-md-7 " style="text-align:center">
+        <h1 class="pt-4 ml3" style="color:#8c3b69"> <b>LES ARTICLES</b> </h1>
+        <h5 style="color:#4682b4">BIENVENU SUR NOTRE PAGE</h5>
+        </div>
+        <div class="col-md-5" style="color:#4682b4">
+          <div class="row"  style="margin-left:20%" > 
+          <div class="col-md-12 "> 
+             <h5>Print Nationale Ankadindramamy </h5>
+             <h5>ANTANANARIVO 101 </h5>
+           </div>
+           <div class="col-md-12" >
+              Contact: +261343120839 <br>
+              Email: voninahitracalvyn@gmail.com
+           </div>
+          </div>
+       </div>
+     </div>
+  </div>
+  </div>
+</div>
+</div>
+<div class="navbar navbar-default navbar-fixed" role="navigation" style="background-color:#ff8c00">
+  <div class="container">
+    <div class="navbar-header">
+    <button type="button" class="navbar-toggle" datatoggle="collapse" data-target=".navbar-collapse">
+     <span class="icon-bar"></span>
+     <span class="icon-bar"></span>
+     <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="{{path('app_home')}}" style="color:#fff">Blog Symfony</a>
+</div>
+<div class="collapse navbar-collapse " style="margin-left:18%">
+    <ul class="nav navbar-nav" style="width:70%">
+     <li class="" ><a href="{{path('app_home')}}" style="color:#fff"><span>Acceuil</span></a></li>
+     <li  style="margin-left:5%"><a href="{{path('article.index')}}"  style="color:#fff"><span>Articles</span></a></li>
+    </ul>
+ </div><!--/.nav-collapse -->
+</div>
+</div>
+<div class="card">
+     <div class="container-fluid">
+       <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4" style="margin-top:4%">
+               <div class="blog-grid">
+                  <div class="blog-form" >
+                     <h3 style="color:#008080" style="margin-top:-2%;">Nouveau Article</h3><hr>
+                     <!--form  method="post" id="formAuteur" action="#" enctype="multipart/form-data">
+                   <div class="form-group">
+                  <label for="nomAuteur">Nom auteur:</label>
+                  <input class="form-control" type="text" name="nomAuteur" id="nomAuteur" placeholder="ex: Voninahitra"></br>
+                  <input type="hidden" id="idAuteur" class="idAuteur" name="idAuteur">
+                  <div calss="row">
+                  <div class="col-md-6" justify-content>
+                  <button type="reset" class="btn btn-info  btn-sm btn-block"><a href="javascript:history.go(-1)" style="color:#fff;">Annuler</a></button></div>
+                  <div class="col-md-6"><button type="submit" class="btn btn-info  btn-sm btn-block" id="btnSubmitAuteur">Valider</button></div></br>
+                </div>
+                </form-->
+               {{ form_start(formArticle) }}
+
+                        {{ form_row(formArticle.titreArticle,
+                        {
+                            'attr':{'placeholder':'Ex: Eléction présidentielle', 'class':''},
+                            'label':'Titre de l\'article:'
+                        }
+                        ) }}
+
+                         {{ form_row(formArticle.auteurArticle,
+                        {
+                            'attr':{'placeholder':'Ex: Voninahitra', 'class':''},
+                            'label':'Nom Auteur:'
+                        }
+                        ) }}
+
+                         {{ form_row(formArticle.texteArticle,
+                        {
+                            'attr':{'placeholder':'Ex: Voninahitra', 'class':''},
+                            'label':'Contenu de l\'article:'
+                        }
+                        ) }}
+                        <div class="row" style="text-align:right;">
+                         <button type="reset" class="btn btn-info btn-md" style="margin-right:10px"><a href="{{path('app_home')}}" style="color:#fff;text-decoration:none">Annuler</a></button>
+                         <button type="submit" class="btn btn-info btn-md" style="margin-right:15px">Valider</button>
+                         </div>
+                        {{ form_end(formArticle) }}
+           </div> 
+          </div>
+         </div>
+        </div>
+        </div>
+     </div>
+       </div>
+     </div>
+
+
+{% endblock %}
